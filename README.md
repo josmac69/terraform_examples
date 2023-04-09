@@ -1,6 +1,8 @@
 # terraform_examples
 Local examples and tests of terraform with localstack AWS emulator
 
+* Install minikube
+* Install Docker
 * [localstack repository](https://github.com/localstack/localstack)
 
 ***
