@@ -18,13 +18,15 @@ define terraform
 		-v $$HOME/.terraform.d:/root/.terraform.d \
 		-e KUBECONFIG=/root/.kube/config \
 		-e TF_LOG=INFO \
-		-e CA_CERT=/root/.minikube/ca.crt \
-		-e CLIENT_CERT=/root/.minikube/profiles/minikube/client.crt \
-		-e CLIENT_KEY=/root/.minikube/profiles/minikube/client.key \
 		-v $(TERRAFORM_DIR)/$(EXAMPLE):$(WORK_DIR) \
 		-w $(WORK_DIR) \
 		$(DOCKER_IMAGE) $(1)
 endef
+
+#		-e CA_CERT=/root/.minikube/ca.crt \
+		-e CLIENT_CERT=/root/.minikube/profiles/minikube/client.crt \
+		-e CLIENT_KEY=/root/.minikube/profiles/minikube/client.key \
+
 
 # Define the default target to run Terraform init in the container
 .PHONY: init
